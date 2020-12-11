@@ -1,17 +1,3 @@
-# import numpy as np
-# import pandas as pd
-
-# numbers = [2, 4, 6, 10]
-# target_number = 8
-
-# for i, num_1 in enumerate(numbers[:1]):
-#     num_2 = target_number - num_1
-#     if num_2 in numbers[i+1:]:
-#         print("Solution Found: {} and {}".format(num_1, num_2))
-#         break
-#     else:
-#         print("No solutions found")
-
 def FileCheck(filename):
     try:
         with open(filename) as f:
