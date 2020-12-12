@@ -8,12 +8,9 @@ def FileCheck(filename):
 list_of_numbers = FileCheck('input-files/day1.txt')
 
 def PartOne(target_num, input_file):
-    try:
-        num_1 = target_number//2
-        possible_numbers = {target_number-x for x in list_of_numbers if x<=num_1} & {x for x in list_of_numbers if x>num_1}
-        return [[target_number-x, x] for x in possible_numbers][0]
-    except:
-        return 'Error: Solution could not be found'
+    num_1 = target_number//2
+    possible_numbers = {target_number-x for x in list_of_numbers if x<=num_1} & {x for x in list_of_numbers if x>num_1}
+    return [[target_number-x, x] for x in possible_numbers][0]
 
 def PartTwo(target_num, input_file):
     for num_1 in range(len(input_file)):
