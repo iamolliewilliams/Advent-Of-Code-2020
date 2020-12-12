@@ -15,8 +15,20 @@ def PartOne(target_num, input_file):
     except:
         return 'Error: Solution could not be found'
 
-print('----- Part one -----')
+def PartTwo(target_num, input_file):
+    for num_1 in range(len(input_file)):
+        for num_2 in range(num_1+1, len(input_file)):
+            for num_3 in range(num_2+1, len(input_file)):
+                if input_file[num_1]+input_file[num_2]+input_file[num_3] == target_num:
+                    return [input_file[num_1], input_file[num_2], input_file[num_3]]
+
+
 target_number = 2020
+print('----- Part one -----')
 result = PartOne(target_number, list_of_numbers)
 print('Two entries that sum to {} are {} and {}'.format(target_number, result[0], result[1]))
 print('Output number is {}'.format(result[0]*result[1]))
+print('----- Part two -----')
+result = PartTwo(target_number, list_of_numbers)
+print('Three entries that sum to {} are {}, {} and {}'.format(target_number, result[0], result[1], result[2]))
+print('Output number is {}'.format(result[0]*result[1]*result[2]))
